@@ -119,12 +119,5 @@ struct ContentView: View {
     }
 }
 
-@main
-struct NumberConvertersApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
+
 
