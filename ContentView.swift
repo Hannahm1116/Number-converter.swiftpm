@@ -91,33 +91,35 @@ struct ContentView: View {
     
     // Conversion functions
     func convertDecimalToBinary(_ decimal: String) -> String {
-        guard let decimalValue = Int(decimal) else {
+        if let decimalValue = Int(decimal) {
+            return String(decimalValue, radix: 2)
+        } else {
             return "Invalid Input"
         }
-        return String(decimalValue, radix: 2)
     }
     
     func convertBinaryToDecimal(_ binary: String) -> String {
-        guard let decimalValue = Int(binary, radix: 2) else {
+        if let decimalValue = Int(binary, radix: 2) {
+            return String(decimalValue)
+        } else {
             return "Invalid Input"
         }
-        return String(decimalValue)
     }
     
     func convertDecimalToHexadecimal(_ decimal: String) -> String {
-        guard let decimalValue = Int(decimal) else {
+        if let decimalValue = Int(decimal) {
+            return String(decimalValue, radix: 16).uppercased()
+        } else {
             return "Invalid Input"
         }
-        return String(decimalValue, radix: 16).uppercased()
     }
     
     func convertHexadecimalToBinary(_ hexadecimal: String) -> String {
-        guard let decimalValue = Int(hexadecimal, radix: 16) else {
+        if let decimalValue = Int(hexadecimal, radix: 16) {
+            return String(decimalValue, radix: 2)
+        } else {
             return "Invalid Input"
         }
-        return String(decimalValue, radix: 2)
     }
 }
-
-
 
